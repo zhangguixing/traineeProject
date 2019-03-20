@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+.table {border: 1px solid #ddd;width: 384px;border-collapse: collapse;}
+.table th{border: 1px solid #ddd;font-weight: bold;text-align:center;color: #000;height: 28px;font-size: 14px;}
+.table td{border: 1px solid #ddd;text-align:left ;color: #000;font-size: 14px;padding-left: 10px;}

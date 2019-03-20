@@ -1,0 +1,49 @@
+/* �������?����֮�� */
+input, button {
+	margin:0;
+	font-size:12px;
+	vertical-align:middle;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.line {
+	position: relative;
+/* 	height: 29px; */
+	padding: 0;
+	/* width: 461px;
+	padding:15px;
+	margin: 10px auto;
+	overflow: hidden; */
+}
+.line li {
+	float:left;
+/* 	margin-right:20px; */
+}
+.line li.back {
+	border-bottom: 4px solid #31B0D5;
+	width:9px;
+	height:4px;
+	z-index: 100;
+	position: absolute;
+	margin-top: 47px;
+}
+.line li a {
+	color: #000;
+	outline: none;
+	text-align: center;
+	/* top: -7px; */
+	text-transform: uppercase;
+	letter-spacing: 0;
+	z-index: 100;
+	display: block;
+	float: left;
+	/* height: 30px; */
+	position: relative;
+	overflow: hidden;
+	/* margin: auto 10px; */
+}
+.line li a:hover, .line li a:active, .line li a:visited {
+	border: none;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    	 http://www.springframework.org/schema/beans/spring-beans.xsd
+     	 http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/tx
+     	 http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 导入properties文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<!-- 使用c3p0连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
+		<property name="user" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+
+	<!-- 配置SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.dialetic">org.hibernate.dialect.MySQL5Dialect</prop>
+				
+			</props>
+		</property>
+		<!-- 自动扫描，加载包中的所有注解 -->
+		<property name="packagesToScan">
+		
+			<list>
+				<value>com.trainee.domain</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 扫描组件 -->
+	<context:component-scan base-package="com.trainee"></context:component-scan>
+	<context:component-scan base-package="com.test.WebSocketAction"></context:component-scan>
+
+
+	<!-- hibernate事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 注解配置驱动 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- HibernateTemplate	模板 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	</beans>

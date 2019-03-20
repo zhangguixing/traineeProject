@@ -1,0 +1,133 @@
+* { margin: 0; padding: 0; }
+/* body { font-family: "Microsoft Yahei"; font-size: 16px; color: #888; } */
+a, a:hover { color: #888; text-decoration: none; }
+ul, li { list-style: none; }
+
+.calendar {
+  display: none;
+  width: 373px;
+  padding: 10px;
+  margin: -30px 0px -131px -49px;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border:#EDEFF0 solid;
+  border-width:1px; 
+  background-color: #FFFFFF;
+}
+.calendar-title {
+  position: relative;
+  height: 50px;
+  line-height: 30px;
+  padding: 10px 0;
+}
+.calendar-title a.title {
+  display: inline-block;
+  font-size: 26px;
+  text-indent: 10px;
+}
+#backToday {
+  position: absolute;
+  left: 70%;
+  top: 8px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #43D8EFE6;/* 修改过 */
+  font-size: 18px;
+}
+.calendar-title .arrow {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 50px;
+}
+.calendar-title .arrow span {
+  color: #ddd;
+  font-size: 26px;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.calendar-title .arrow span:hover {
+  color: #888;
+}
+.calendar-title .arrow-prev {
+  float: left;
+}
+.calendar-title .arrow-next {
+  float: right;
+}
+.calendar-week,
+.calendar-date {
+  overflow: hidden;
+}
+.calendar-week .item,
+.calendar-date .item {
+  float: left;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.calendar-week {
+  padding-bottom: 6px;
+  border-bottom: 1px solid #43D8EFE6;/* 修改过 */
+  font-weight: bold;
+  font-size: 16px;
+}
+.calendar-date {}
+.calendar-date .item {
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
+.calendar-date .item:hover,
+.calendar-date .item-curMonth:hover {
+  background-color: #6699FFE6;/* 修改过 */
+}
+.calendar-date .item-curMonth {
+  color: #333;
+  font-weight: bold;
+}
+.calendar-date .item-curDay,
+.calendar-date .item-curDay:hover {
+  color: #fff;
+  background-color: #43D8EFE6;/* 修改过 */
+}
+.calendar-date .item-selected,
+.calendar-date .item-selected:hover {
+  color: #43D8EFE6;
+  background: #cde9d9;
+}
+.calendar-today {
+  display: none;
+   position: absolute; 
+  left: 20px;
+  top: 20px;
+  width: 90px;
+  height: 48px;
+  padding: 6px 10px;
+  background-color: #43D8EFE6;/* 修改过 */
+  border-radius: 5px;
+}
+.calendar-today .triangle {
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  margin-top: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent #43D8EFE6 transparent transparent;/* 修改过 */
+}
+.calendar-today p {
+  color: #fff;
+  font-size: 11px;/* 修改过 */
+  line-height: 12px;/* 修改过 */
+}

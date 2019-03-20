@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+body {
+    min-height: 300px;
+    padding-top: 30px;
+   /*  background: url("../img/pin_03.jpg") no-repeat center fixed ; */
+	font: 12px '宋体','Arial Narrow',HELVETICA;
+    font-family: '微软雅黑',Tahoma,Verdana,Geneva,sans-serif;
+    line-height: 1.42857143;
+    background-color: #fff;
+    margin: 0;
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body.signin {
+    height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#1a7bb9;
+}
+.signinpanel .logopanel{
+	float:none;
+	width:auto;
+    padding:0;
+    background:0 0}
+.signinpanel{
+	width:750px;
+	margin:10% auto 4.5%;
+}
+
+.m-b {
+    margin:15px auto auto 43% ;
+}
+.signinpanel .signin-info ul{list-style:none;padding:0;margin:20px 0}
+.signinpanel .form-control{display:block;margin-top:15px}
+.signinpanel form {
+    background: rgba(255,255,255,.2);
+    border: 1px solid rgba(255,255,255,.3);
+    -moz-box-shadow: 0 3px 0 rgba(12,12,12,.03);
+    -webkit-box-shadow: 0 3px 0 rgba(12,12,12,.03);
+    box-shadow: 0 3px 0 rgba(12,12,12,.03);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 30px;
+ 
+}
+
+.signinpanel .uname,.signinpanel .tel,.signinpanel .gonghao,.signinpanel .xuehao,.signinpanel .email{background:#fff url(../img/user.png)/*tpa=http://www.zi-han.net/theme/hplus/img/user.png*/ no-repeat 95% center;color:#333}
+.signinpanel .pword{background:#fff url(../img/locked.png)/*tpa=http://www.zi-han.net/theme/hplus/img/locked.png*/ no-repeat 95% center;color:#333}
+.signinpanel .btn{margin-top:20px; margin-left:33px}
+/*  .signup-footer{margin:20px  215px;padding-top:15px}*/
+@media screen and (max-width:768px){
+	.signinpanel,.signuppanel{margin:0 auto;width:420px!important;padding:20px}.signinpanel form{margin-top:20px}.signup-footer,.signuppanel .form-control{margin-bottom:10px}
+	.signup-footer .pull-left,.signup-footer .pull-right{float:none!important;text-align:center}.signinpanel .signin-info ul{display:none}}
+	
+@media screen and (max-width:320px){.signinpanel,.signuppanel{margin:0 20px;width:auto}}
